@@ -8,7 +8,7 @@ interface MobileMenuLinkProps {
 }
 const MobileMenuLink = ({ icon: Icon, link, getActionFn, active }: MobileMenuLinkProps) => {
     return (
-        <div className={`flex flex-col items-center px-5 py-2 rounded-tl-xl rounded-tr-xl ${active ? 'bg-active' : ''}`} onClick={getActionFn}>
+        <div className={`flex flex-col items-center px-4 py-2 rounded-tl-xl rounded-tr-xl ${active ? 'bg-active' : ''}`} onClick={getActionFn}>
             {Icon && <Icon size={18} />}
             {link && <p className="capitalize text-sm">{link}</p>}
         </div>

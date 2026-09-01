@@ -6,11 +6,11 @@ import { MenuLinkType } from '@/utils/types'
 import { useRouter } from 'next/navigation'
 
 const MobileMenu = () => {
-    const [activePage, setActivePage] = useState('home')
+    const [activePage, setActivePage] = useState('dashboard')
     const router = useRouter()
 
     const handleMobMenuItem = (item: MenuLinkType) => {
-        setActivePage(item.name ?? 'home')
+        setActivePage(item.name ?? 'dashboard')
         router.push(item.href)
     }
     return (

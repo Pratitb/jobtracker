@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const Header = ({ back, search, newApp }: HeaderProps) => {
     return (
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center mb-4'>
             {back && <ChevronLeft />}
             <div>
                 <p className='font-bold capitalize'>page name</p>
