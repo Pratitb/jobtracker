@@ -3,7 +3,7 @@ import { ApplicationType, MenuLinkType, StatCardType } from "./types";
 
 export const Menu: MenuLinkType[] = [
     { name: 'dashboard', icon: Home, href: '/' },
-    { name: 'apps', icon: FileStack, href: '/apps' },
+    { name: 'applications', icon: FileStack, href: '/applications' },
     { name: 'calendar', icon: CalendarDays, href: '/calendar' },
     { name: 'profile', icon: UserShield, href: '/profile' }
 ]
@@ -16,7 +16,7 @@ export const StatCards: StatCardType[] = [
     { name: 'rejected', icon: HeartX }
 ]
 
-export const Applications: ApplicationType[] = [
+export const applicationData: ApplicationType[] = [
     {
         domain: "tcs.com",
         role: "Frontend Developer",

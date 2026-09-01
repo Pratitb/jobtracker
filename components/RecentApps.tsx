@@ -3,25 +3,31 @@
 import React from 'react'
 import Button from './Button'
 import JobApplication from './JobApplication'
-import { Applications } from '@/utils/staticData'
 import { useRouter } from 'next/navigation'
+import { ApplicationType } from '@/utils/types'
 
-const RecentApps = () => {
+interface RecentAppsProps {
+    getApplicationData?: ApplicationType[]
+    btn?: string
+    head?: string
+}
+
+const RecentApps = ({ getApplicationData, btn, head }: RecentAppsProps) => {
     const router = useRouter()
     const handleAllApplications = () => {
-        router.push('/apps')
+        router.push('/applications')
     }
-    const recentFiveApps = Applications.slice(0, 5)
+
     return (
         <div className='border border-border rounded-lg px-4 py-4'>
             {/* header */}
             <div className='flex justify-between items-center mb-4'>
-                <p className='widgetName'>recent applications</p>
-                <Button getName='view all' getActionFn={handleAllApplications} styles='border border-border rounded-lg px-2 py-1 text-sm font-medium' />
+                <p className='widgetName'>{head}</p>
+                {btn && <Button getName={btn} getActionFn={handleAllApplications} styles='border border-border rounded-lg px-2 py-1 text-sm font-medium' />}
             </div>
             {/* applications */}
             <div>
-                {recentFiveApps?.map(item => <JobApplication key={`${item.role}-${item.org}`} logo={item.domain} role={item.role} org={item.org} status={item.status} date={item.appliedDate} />)}
+                {getApplicationData?.map(item => <JobApplication key={`${item.role}-${item.org}`} logo={item.domain} role={item.role} org={item.org} status={item.status} date={item.appliedDate} />)}
             </div>
         </div>
     )
