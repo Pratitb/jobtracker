@@ -10,6 +10,8 @@
   --color-icon: #d1d5db;
   --color-wordGray: #9ca3af;
   --color-darkGray: #030712;
+
+
 }
 
 body {
@@ -19,6 +21,18 @@ body {
 .container {
   width: 100%;
   max-width: 1226px;
-  padding: 20px 10px;
+  padding: 20px 10px 80px;
   margin: 0 auto;
+}
+
+.pageName {
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.widgetName {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
