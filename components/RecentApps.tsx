@@ -11,6 +11,7 @@ const RecentApps = () => {
     const handleAllApplications = () => {
         router.push('/apps')
     }
+    const recentFiveApps = Applications.slice(0, 5)
     return (
         <div className='border border-border rounded-lg px-4 py-4'>
             {/* header */}
@@ -20,7 +21,7 @@ const RecentApps = () => {
             </div>
             {/* applications */}
             <div>
-                {Applications?.map(item => <JobApplication key={`${item.role}-${item.org}`} logo={item.domain} role={item.role} org={item.org} status={item.status} date={item.appliedDate} />)}
+                {recentFiveApps?.map(item => <JobApplication key={`${item.role}-${item.org}`} logo={item.domain} role={item.role} org={item.org} status={item.status} date={item.appliedDate} />)}
             </div>
         </div>
     )
