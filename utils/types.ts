@@ -13,9 +13,13 @@ export interface StatCardType {
 }
 
 export interface ApplicationType {
+    id?: string
     domain: string
     role?: string
     org?: string
+    location?: string
+    type?: string
+    salary?: string
     status: string
     appliedDate?: string
 }

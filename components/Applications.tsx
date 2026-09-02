@@ -5,17 +5,22 @@ import Button from './Button'
 import JobApplication from './JobApplication'
 import { useRouter } from 'next/navigation'
 import { ApplicationType } from '@/utils/types'
+import NoApplication from './NoApplication'
 
-interface RecentAppsProps {
+interface ApplicationsProps {
     getApplicationData?: ApplicationType[]
     btn?: string
     head?: string
 }
 
-const RecentApps = ({ getApplicationData, btn, head }: RecentAppsProps) => {
+const Applications = ({ getApplicationData, btn, head }: ApplicationsProps) => {
     const router = useRouter()
     const handleAllApplications = () => {
         router.push('/applications')
+    }
+
+    const handleJob = (id?: string) => {
+        router.push(`/applications/${id}/`)
     }
 
     return (
@@ -27,10 +32,11 @@ const RecentApps = ({ getApplicationData, btn, head }: RecentAppsProps) => {
             </div>
             {/* applications */}
             <div>
-                {getApplicationData?.map(item => <JobApplication key={`${item.role}-${item.org}`} logo={item.domain} role={item.role} org={item.org} status={item.status} date={item.appliedDate} />)}
+                {getApplicationData?.length ?
+                    getApplicationData?.map(item => <JobApplication key={`${item.role}-${item.org}`} logo={item.domain} role={item.role} org={item.org} status={item.status} date={item.appliedDate} getActionFn={() => handleJob(item.id)} />) : <NoApplication />}
             </div>
         </div>
     )
 }
 
-export default RecentApps
+export default Applications

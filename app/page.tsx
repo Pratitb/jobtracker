@@ -1,4 +1,4 @@
-import RecentApps from "@/components/RecentApps";
+import RecentApps from "@/components/Applications";
 import StatCard from "@/components/StatCard";
 import { getCount } from "@/lib/countStats";
 import { applicationData } from "@/utils/staticData";
